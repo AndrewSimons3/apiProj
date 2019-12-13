@@ -38,13 +38,55 @@ const consolePosts = () => {
   console.log(bulbasaurData, charmanderData)
 }
 
+const bulbasaur = () => {
+  let bulbasaurPicture =document.createElement('img')
+  bulbasaurPicture.src = src = bulbasaurData.sprites.front_shiny;
+  let bulbasaurAttack = bulbasaurData.stats[4].base_stat;
+  let bulbInfo = document.createTextNode(bulbasaurAttack)
+  const btn = document.getElementById('btn1')
+  
+  btn.onclick = function() {
+      bulb.appendChild(bulbasaurPicture);
+      bulb.appendChild(bulbInfo)
+      console.log(bulbInfo, bulbasaurPicture, "hello!")
+    //       const newLi = document.createElement('li');
+    //       const newText =document.createTextNode(`${post.email} ${post.location.city}`);
+    //       spaceHolder.appendChild(newText);
+    //       allPosts.append(li)
+    //       console.log(newText, "hello")
+    //     }
+}
+}
+const charmander = () => {
+  let charmanderPicture =document.createElement('img')
+  charmanderPicture.src = src = charmanderData.sprites.front_shiny;
+  let charmanderAttack = charmanderData.stats[4].base_stat;
+  let charmInfo = document.createTextNode(charmanderAttack)
+  const btn = document.getElementById('btn2')
+  
+  btn.onclick = function() {
+      charm.appendChild(charmanderPicture);
+      charm.appendChild(charmInfo)
+      // console.log(bulbInfo, bulbasaurPicture, "hello!")
+    //       const newLi = document.createElement('li');
+    //       const newText =document.createTextNode(`${post.email} ${post.location.city}`);
+    //       spaceHolder.appendChild(newText);
+    //       allPosts.append(li)
+    //       console.log(newText, "hello")
+    //     }
+}
+}
 const pokemonFight = () => {
   let bulbasaurAttack = bulbasaurData.stats[4].base_stat
   let charmanderAttack = charmanderData.stats[4].base_stat
+  let charmanderWins = `Charmander Wins!`
+  let bulbasaurWins = `Bulbasaur Wins!`
+  let charmWins = document.createTextNode(charmanderWins)
+  let bulbWins =document.createTextNode(bulbasaurWins)
   if(bulbasaurAttack > charmanderAttack) {
-    console.log(`Bulbasaur Wins`)
+    match.appendChild(bulbWins)
   } else {
-    console.log(`Charmander Wins`)
+    match.appendChild(charmWins)
   }
   // console.log(bulbasaurAttack);
   // console.log(bulbasaurData.stats)
