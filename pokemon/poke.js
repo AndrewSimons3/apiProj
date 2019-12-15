@@ -77,6 +77,8 @@ const charmander = () => {
 }
 }
 const pokemonFight = () => {
+  let fightPrint =document.getElementById('match');
+  fightPrint.innerHTML='';
   let bulbasaurAttack = bulbasaurData.stats[4].base_stat
   let charmanderAttack = charmanderData.stats[4].base_stat
   let charmanderWins = `Charmander Wins!`
@@ -84,9 +86,9 @@ const pokemonFight = () => {
   let charmWins = document.createTextNode(charmanderWins)
   let bulbWins =document.createTextNode(bulbasaurWins)
   if(bulbasaurAttack > charmanderAttack) {
-    match.appendChild(bulbWins)
+    fightPrint.append(bulbWins)
   } else {
-    match.appendChild(charmWins)
+    fightPrint.append(charmWins)
   }
   // console.log(bulbasaurAttack);
   // console.log(bulbasaurData.stats)
