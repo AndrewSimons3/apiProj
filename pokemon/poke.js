@@ -34,14 +34,14 @@ const getCharmander = () => {
     .then(data => charmanderData = data)
     .catch(error => console.log(error))
 }
-const consolePosts = () => {
-  console.log(bulbasaurData, charmanderData)
-}
+// const consolePosts = () => {
+//   console.log(bulbasaurData, charmanderData)
+// }
 
 const bulbasaur = () => {
   let bulbasaurPicture =document.createElement('img')
   bulbasaurPicture.src = src = bulbasaurData.sprites.front_shiny;
-  let bulbasaurAttack = bulbasaurData.stats[4].base_stat;
+  let bulbasaurAttack = `Attack ${bulbasaurData.stats[4].base_stat}`;
   let bulbInfo = document.createTextNode(bulbasaurAttack)
   const btn = document.getElementById('btn1')
   
@@ -60,7 +60,7 @@ const bulbasaur = () => {
 const charmander = () => {
   let charmanderPicture =document.createElement('img')
   charmanderPicture.src = src = charmanderData.sprites.front_shiny;
-  let charmanderAttack = charmanderData.stats[4].base_stat;
+  let charmanderAttack = `Attack ${charmanderData.stats[4].base_stat}`;
   let charmInfo = document.createTextNode(charmanderAttack)
   const btn = document.getElementById('btn2')
   
@@ -91,7 +91,6 @@ const pokemonFight = () => {
   // console.log(bulbasaurAttack);
   // console.log(bulbasaurData.stats)
 }
-console.log(pokemonFight)
 // const displayPost = () => {
 //   const allPosts = document.getElementById('all-posts')
 //   userData.results.map((post) => {

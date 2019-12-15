@@ -1,0 +1,21 @@
+
+body {
+  display:flex;
+}
+.main {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  width:100%;
+}
+#bulb, #charm {
+  display:flex;
+  /* border:1px solid red; */
+  height:175px;
+  width:400px;
+  background-image: url(./akshay-chauhan-qBUU6wsgK6A-unsplash.jpg);
+  background-size: cover;
+}
+#btn1, #btn2 {
+  height:20px;
+}
