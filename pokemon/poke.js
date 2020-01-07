@@ -34,20 +34,23 @@ const getCharmander = () => {
     .then(data => charmanderData = data)
     .catch(error => console.log(error))
 }
-// const consolePosts = () => {
-//   console.log(bulbasaurData, charmanderData)
-// }
+const consolePosts = () => {
+  console.log(bulbasaurData, charmanderData)
+}
 
 const bulbasaur = () => {
   let bulbasaurPicture =document.createElement('img')
-  bulbasaurPicture.src = src = bulbasaurData.sprites.front_shiny;
-  let bulbasaurAttack = `Attack ${bulbasaurData.stats[4].base_stat}`;
-  let bulbInfo = document.createTextNode(bulbasaurAttack)
+  bulbasaurPicture.src = src = bulbasaurData.sprites.front_default;
+  let bulbInfo = document.createElement("span");
+  bulbInfo.style.color = "white";
+  bulbInfo.style.fontSize = "24px"
+  bulbInfo.textContent = `Attack ${bulbasaurData.stats[4].base_stat}`;
   const btn = document.getElementById('btn1')
   
   btn.onclick = function() {
       bulb.appendChild(bulbasaurPicture);
       bulb.appendChild(bulbInfo)
+      
       console.log(bulbInfo, bulbasaurPicture, "hello!")
     //       const newLi = document.createElement('li');
     //       const newText =document.createTextNode(`${post.email} ${post.location.city}`);
@@ -60,8 +63,10 @@ const bulbasaur = () => {
 const charmander = () => {
   let charmanderPicture =document.createElement('img')
   charmanderPicture.src = src = charmanderData.sprites.front_shiny;
-  let charmanderAttack = `Attack ${charmanderData.stats[4].base_stat}`;
-  let charmInfo = document.createTextNode(charmanderAttack)
+  let charmInfo = document.createElement("span")
+  charmInfo.textContent = `Attack ${charmanderData.stats[4].base_stat}`;
+  charmInfo.style.color = "white";
+  charmInfo.style.fontSize = "24px"
   const btn = document.getElementById('btn2')
   
   btn.onclick = function() {
@@ -81,10 +86,14 @@ const pokemonFight = () => {
   fightPrint.innerHTML='';
   let bulbasaurAttack = bulbasaurData.stats[4].base_stat
   let charmanderAttack = charmanderData.stats[4].base_stat
-  let charmanderWins = `Charmander Wins!`
-  let bulbasaurWins = `Bulbasaur Wins!`
-  let charmWins = document.createTextNode(charmanderWins)
-  let bulbWins =document.createTextNode(bulbasaurWins)
+  let charmWins = document.createElement("span")
+  charmWins.textContent = `Charmander Wins!`
+  charmWins.style.color = "white";
+  charmWins.style.fontSize = "24px"
+  let bulbWins =document.createElement("span")
+  bulbWins.textContent = `Bulbasaur Wins!`
+  bulbWins.style.color = "white";
+  bulbWins.style.fontSize = "24px"
   if(bulbasaurAttack > charmanderAttack) {
     fightPrint.append(bulbWins)
   } else {
